@@ -1,0 +1,46 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESP32-C6 SD RTOS UI 下载</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0f1115;color:#e6e6e6;line-height:1.6;padding:24px}
+.wrap{max-width:820px;margin:0 auto}
+h1{font-size:24px;margin-bottom:8px}
+.tag{display:inline-block;background:#1e3a5f;color:#7cc4ff;padding:2px 10px;border-radius:20px;font-size:13px;margin:4px 6px 12px 0}
+.card{background:#1a1d24;border:1px solid #2a2f3a;border-radius:12px;padding:20px;margin:16px 0}
+.btn{display:inline-block;background:#2f80ed;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:600;font-size:16px}
+pre{background:#11141a;padding:16px;border-radius:8px;overflow:auto;font-size:13px;color:#9ee493;border:1px solid #2a2f3a}
+h2{font-size:18px;margin-bottom:10px}
+ul{padding-left:20px}li{margin:4px 0}
+.tip{background:#2a2014;border-color:#5a4420;color:#ffd28a}
+</style></head>
+<body><div class="wrap">
+<h1>ESP32-C6 无触控 SD RTOS 微系统</h1>
+<div>
+<span class="tag">FreeRTOS调度</span><span class="tag">LVGL中文UI</span>
+<span class="tag">SD文件管理</span><span class="tag">CPU/内存监控</span>
+<span class="tag">按键交互</span><span class="tag">图标+中文子集</span>
+</div>
+<div class="card">
+<a class="btn" href="esp32c6_147_rtos_ui.zip">⬇ 下载完整工程（ZIP）</a>
+<p style="margin-top:12px;color:#9aa4b2;font-size:14px">
+适配微雪 ESP32-C6-LCD-1.47（ST7789 172×320，板载SD，无触控）。
+解压后配引脚即可 idf.py build。
+</p></div>
+<div class="card"><h2>快速开始</h2>
+<pre>idf.py set-target esp32c6
+idf.py menuconfig
+idf.py build
+idf.py -p 你的串口 flash monitor</pre></div>
+<div class="card tip"><h2>引脚（已按开发板填好）</h2>
+<pre>LCD: MOSI6 SCLK7 CS14 DC15 RST21 BL22
+SD : MISO5 MOSI6 SCLK7 CS4
+KEY: OK9 UP10 DOWN11 BACK8</pre></div>
+<div class="card"><h2>功能</h2>
+<ul>
+<li>FreeRTOS 多任务：GUI / SD / 系统监控解耦</li>
+<li>LVGL 中文界面：首页、文件管理、文本查看、CPU/内存/任务监控</li>
+<li>SD FAT 文件浏览、翻页、打开文本、删除、写日志</li>
+<li>SPI+DMA 局部刷新、中文子集字体、图标预建对象、异步写日志</li>
+</ul></div>
+</div></body></html>
